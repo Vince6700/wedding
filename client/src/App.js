@@ -1,22 +1,18 @@
-import useGuestApi from "./hooks/useGuestApi";
-import { useEffect, useState } from "react";
+import Layout from "./components/layout";
+import Helmet from "./components/helmet";
+import { ThemeProvider } from "@material-ui/core/styles";
+import theme from "./theme/theme";
+import Title from "./components/title";
 
 function App() {
-  const [guests, setGuests] = useState([]);
-  const { getGuests } = useGuestApi();
-
-  useEffect(() => {
-    fetchGuests();
-  }, []);
-
-  const fetchGuests = async () => {
-    const res = await getGuests();
-    setGuests(res.data);
-  };
-
-  console.log(guests);
-
-  return <div className="App">test</div>;
+  return (
+    <ThemeProvider theme={theme}>
+      <Helmet />
+      <Layout>
+        <Title />
+      </Layout>
+    </ThemeProvider>
+  );
 }
 
 export default App;
