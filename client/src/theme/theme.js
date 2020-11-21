@@ -3,16 +3,32 @@ import createMuiTheme from "@material-ui/core/styles/createMuiTheme";
 const theme = createMuiTheme({
   typography: {
     htmlFontSize: 10,
-    fontFamily: "montserrat, Arial",
+    fontFamily: "Montserrat, Arial",
     h1: {
-      fontSize: "5rem",
-      fontFamily: "Bilbo-swash-caps, Montserrat, Arial",
+      fontSize: "8rem",
+      fontFamily: "Bilbo Swash Caps, Montserrat, Arial",
+    },
+    h3: {
+      fontSize: "2rem",
+      fontFamily: "Montserrat, Arial",
     },
   },
   palette: {
+    primary: {
+      main: "#8fbd9f",
+      light: "#c0f0d0",
+      dark: "#618d71",
+    },
     text: {
       primary: "#FFF",
       secondary: "#EEE",
+    },
+  },
+  overrides: {
+    MuiOutlinedInput: {
+      notchedOutline: {
+        borderColor: "rgba(238, 238, 238, 0.3)",
+      },
     },
   },
 });

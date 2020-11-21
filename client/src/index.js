@@ -2,8 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-require("typeface-montserrat");
-require("typeface-bilbo-swash-caps");
+import "fontsource-bilbo-swash-caps"
+import "fontsource-montserrat"
 
 ReactDOM.render(
   <React.StrictMode>
