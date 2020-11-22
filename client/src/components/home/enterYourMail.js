@@ -2,6 +2,9 @@ import TextField from "@material-ui/core/TextField";
 import { Button, Typography } from "@material-ui/core";
 import Box from "@material-ui/core/Box";
 import { makeStyles } from "@material-ui/core/styles";
+import { useHistory } from "react-router-dom";
+import { useState } from "react";
+import { validateEmail } from "../../helpers/validators";
 
 const useStyles = makeStyles({
   root: {
@@ -13,7 +16,24 @@ const useStyles = makeStyles({
 });
 
 const EnterYourMail = () => {
+  const [email, setEmail] = useState("");
+  const [error, setError] = useState(false);
   const classes = useStyles();
+  const history = useHistory();
+
+  const onSubmit = () => {
+    if (!error) {
+      history.push(`/${email}`);
+    }
+  };
+
+  const handleEmail = (e) => {
+    if (email.length > 0) {
+      setError(!validateEmail(email));
+    }
+    setEmail(e.target.value);
+  };
+
   return (
     <Box
       display="flex"
@@ -32,12 +52,18 @@ const EnterYourMail = () => {
             variant="outlined"
             color="primary"
             className={classes.root}
+            value={email}
+            type="email"
+            onChange={handleEmail}
+            name="email"
+            error={error}
           />
           <Button
             color="primary"
             type="submit"
             variant="contained"
             className={classes.root}
+            onClick={onSubmit}
           >
             Valider
           </Button>
