@@ -13,7 +13,18 @@ const useGuestApi = () => {
     }
   };
 
-  return { getGuests };
+  const getGuest = async (email) => {
+    try {
+      const res = await api.get(`/guest/${email}`);
+      return res.data;
+    } catch (e) {
+      if (e.response.status === 404) {
+        return e.response.data;
+      }
+    }
+  };
+
+  return { getGuests, getGuest };
 };
 
 export default useGuestApi;

@@ -25,7 +25,7 @@ const EnterYourMail = () => {
   const onSubmit = (e) => {
     e.preventDefault();
     if (!error && email.length > 0) {
-      history.push(`/${email}`);
+      history.push(`invitation/${email}`);
     }
   };
 
