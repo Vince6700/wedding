@@ -7,10 +7,16 @@ const theme = createMuiTheme({
     h1: {
       fontSize: "8rem",
       fontFamily: "Bilbo Swash Caps, Montserrat, Arial",
+      "@media (max-width:600px)": {
+        fontSize: "5rem",
+      },
     },
     h3: {
       fontSize: "2rem",
       fontFamily: "Montserrat, Arial",
+      "@media (max-width:600px)": {
+        fontSize: "1.8rem",
+      },
     },
   },
   palette: {
