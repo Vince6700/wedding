@@ -9,6 +9,7 @@ import { validateEmail } from "../../helpers/validators";
 const useStyles = makeStyles({
   root: {
     margin: "1rem",
+    height: "5.6rem",
   },
   container: {
     marginTop: "5vh",
@@ -21,8 +22,9 @@ const EnterYourMail = () => {
   const classes = useStyles();
   const history = useHistory();
 
-  const onSubmit = () => {
-    if (!error) {
+  const onSubmit = (e) => {
+    e.preventDefault();
+    if (!error && email.length > 0) {
       history.push(`/${email}`);
     }
   };
@@ -53,10 +55,11 @@ const EnterYourMail = () => {
             color="primary"
             className={classes.root}
             value={email}
-            type="email"
+            type="text"
             onChange={handleEmail}
             name="email"
             error={error}
+            helperText={error ? "Entrez un email valide" : " "}
           />
           <Button
             color="primary"
