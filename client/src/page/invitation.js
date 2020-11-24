@@ -2,19 +2,17 @@ import Title from "../components/title";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import useGuestApi from "../hooks/useGuestApi";
+import Card from "../components/invitation/card";
 
 const Invitation = () => {
-  const [invitation, setIinvitation] = useState({});
+  const [invitation, setInvitation] = useState({});
   const [error, setError] = useState();
   const { email } = useParams();
   const { getGuest } = useGuestApi();
 
-  console.log(error);
-  console.log(invitation);
-
   const handleGetGuest = async () => {
     const invit = await getGuest(email);
-    !!invit && invit.success && setIinvitation(invit.data);
+    !!invit && invit.success && setInvitation(invit.data);
     !!invit && !invit.success && setError(invit.error);
   };
 
@@ -25,6 +23,7 @@ const Invitation = () => {
   return (
     <>
       <Title />
+      <Card invitation={invitation} />
     </>
   );
 };
