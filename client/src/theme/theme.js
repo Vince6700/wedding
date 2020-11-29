@@ -4,6 +4,7 @@ const theme = createMuiTheme({
   typography: {
     htmlFontSize: 10,
     fontFamily: "Montserrat, Arial",
+    color: "#FFF",
     h1: {
       fontSize: "8rem",
       fontFamily: "Bilbo Swash Caps, Montserrat, Arial",
@@ -36,6 +37,16 @@ const theme = createMuiTheme({
         borderColor: "rgba(238, 238, 238, 0.3)",
       },
     },
+    MuiAvatar: {
+      colorDefault: {
+        backgroundColor: "transparent",
+      },
+    },
+    MuiDivider: {
+      root: {
+        backgroundColor: "rgba(238, 238, 238, 0.2)"
+      }
+    }
   },
 });
 
