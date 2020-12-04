@@ -16,7 +16,7 @@ app.use(bodyParser.json());
 db.on("error", console.error.bind(console, "MongoDB connection error:"));
 
 app.get("/", (req, res) => {
-  res.send("Hello World!");
+  res.status(200).send("Hello World!");
 });
 
 app.use("/api", guestRouter);
@@ -24,3 +24,5 @@ app.use("/api", guestRouter);
 app.listen(apiPort, () =>
   console.log(`Server running on http://localhost:${apiPort}/`)
 );
+
+module.exports = app;

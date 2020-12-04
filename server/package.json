@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "node index",
-    "dev": "nodemon index"
+    "dev": "nodemon index",
+    "test": "jest",
+    "test:watch": "jest --watch"
   },
   "keywords": [],
   "author": "Vincent Racelle <v.racelle@redpsher.com> (https://yoctu.com/)",
@@ -19,6 +21,14 @@
     "nodemon": "^2.0.6"
   },
   "devDependencies": {
-    "prettier": "^2.1.2"
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "jest": "^26.6.3",
+    "prettier": "^2.2.1",
+    "superagent": "^6.1.0",
+    "supertest": "^6.0.1"
+  },
+  "jest": {
+    "testEnvironment": "node"
   }
 }
