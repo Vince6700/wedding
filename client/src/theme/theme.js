@@ -44,9 +44,15 @@ const theme = createMuiTheme({
     },
     MuiDivider: {
       root: {
-        backgroundColor: "rgba(238, 238, 238, 0.2)"
-      }
-    }
+        backgroundColor: "rgba(238, 238, 238, 0.2)",
+      },
+    },
+    MuiButton: {
+      label: {
+        color: "#FFF",
+        fontWeight: "bold",
+      },
+    },
   },
 });
 
