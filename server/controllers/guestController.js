@@ -86,7 +86,6 @@ deleteGuest = async (req, res) => {
 };
 
 getGuestByEmail = async (req, res) => {
-  console.log(req);
   await Guest.findOne({ email: req.params.email }, (err, guest) => {
     if (err) {
       return res.status(400).json({ success: false, error: err });
@@ -104,10 +103,7 @@ getGuests = async (req, res) => {
     if (err) {
       return res.status(400).json({ success: false, error: err });
     }
-    if (!guests.length) {
-      return res.status(404).json({ success: false, error: `Guest not found` });
-    }
-    return res.status(200).json({ success: true, data: guests });
+    return res.status(200).json({ success: true, data: guests || [] });
   }).catch((err) => console.log(err));
 };
 
