@@ -3,7 +3,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 
-const guestRouter = require("./routes/guestRouter");
+const guestRouter = require("./libs/guest/guestRouter");
 
 const app = express();
 

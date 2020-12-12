@@ -1,5 +1,5 @@
 require("dotenv").config();
-const app = require("../index");
+const app = require("../../../index");
 const supertest = require("supertest");
 const request = supertest(app);
 const dbSetup = require("./dbSetup");

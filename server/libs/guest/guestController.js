@@ -1,4 +1,4 @@
-const Guest = require("../models/guestModel");
+const Guest = require("./guestModel");
 
 createGuest = (req, res) => {
   const body = req.body;
